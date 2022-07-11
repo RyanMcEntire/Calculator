@@ -1,3 +1,5 @@
+let displayOutput = 0;
+
 const add = function (a, b) {
   sum = a + b;
   return sum;
