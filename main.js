@@ -44,13 +44,38 @@ const operate = function (a, op, b) {
   console.log(total);
 };
 
+let computeArray = [];
+let a = 0;
+let b = 0;
+let op;
+
 let displayValue;
 const displayScreen = document.querySelector("#numberDisplay");
-displayScreen.textContent = "13457869";
+displayScreen.textContent = "0";
 
 const buttonPress = document.getElementById("buttonArea");
 buttonPress.addEventListener("click", (e) => {
   let displayValue = e.target.value;
-  displayScreen.textContent = displayValue;
+  computeArray.push(displayValue);
+  let computeJoined = computeArray.join("");
+  displayScreen.textContent = computeJoined;
+  if (e.target.id === "operator") {
+    op = e.target.value;
+    let aArray = computeArray.splice(0, -1);
+    a = aArray.join("");
+    computeArray.length = 0;
+  }
+  if (e.target.value === "=") {
+    let bArray = computeArray.splice(0, -1);
+    b = bArray.join("");
+    c = operate(a, op, b);
+    a = c;
+    displayScreen.textContent = c;
+    computeArray.length = 0;
+  }
+  console.log(a)
+  console.log(b)
   console.log(displayScreen.textContent);
+  console.log(computeArray);
+  console.log(op);
 });

@@ -1,0 +1,16 @@
+ make storage array
+ have default display be 0
+ add each input sent to a display array (or string?)
+ when number inputs, add to compute array using for loop
+ when the input is an operator
+  store the operator choice as op
+  take everything before the operator, concatinate and store it as number a.
+  clear compute array
+  then take more numbers
+  if input is another operator && a > 0, 
+      cat and store the numbers as a
+  if equal sign is used, 
+      take each number before equals, concatinate and store it as b
+  perform operation on a, op, and b.
+  store the result as a
+  display result on screen
