@@ -1,5 +1,3 @@
-let displayOutput = 0;
-
 const add = function (a, b) {
   sum = a + b;
   return sum;
@@ -45,3 +43,16 @@ const operate = function (a, op, b) {
 
   console.log(total);
 };
+
+
+
+let displayValue;
+const displayScreen = document.querySelector("#numberDisplay");
+displayScreen.textContent = "0";
+
+const buttonPress = document.getElementById("buttonArea");
+buttonPress.addEventListener("click", (e) => {
+  let displayValue = e.target.value;
+  displayScreen.textContent = displayValue;
+  console.log(displayScreen.textContent);
+});
