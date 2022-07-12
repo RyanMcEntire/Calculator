@@ -11,7 +11,7 @@ body {
   color: rgb(54, 54, 54);
 }
 .calcFrame {
-  background-color: rgb(204, 187, 182);
+  background-color: rgb(235, 196, 124);
   height: 625px;
   width: 350px;
   margin: auto;
@@ -21,6 +21,7 @@ body {
   border-radius: 18px;
   border: 4px outset rgba(238, 231, 229, 0.308);
   filter: drop-shadow(2px 2px 2px #0000006c);
+  background-image: url(pictures/light-aluminum.png);
 }
 
 .brains {
@@ -29,20 +30,21 @@ body {
   display: flex;
   border: 0px solid black;
   padding-top: 20px;
-  margin-left: 75%;
+  margin-left: 60%;
 }
 
 .model {
-  width: 45px;
-  height: 35px;
+  width: 40px;
+  height: 32px;
   background-color: rgb(72, 116, 72);
   color: rgb(255, 240, 155);
   text-align: right;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-weight: bold;
   padding: 5px;
-  border-radius: 7px;
+  border-radius: 4px;
   border: 2px ridge rgba(238, 231, 229, 0.308);
+  margin-top: 34px
 }
 
 .legend {
@@ -56,7 +58,7 @@ body {
 }
 .ui {
   display: flex;
-  background-color: rgba(196, 126, 55, 0.589);
+  background-color: rgba(204, 152, 40, 0.89);
   flex-direction: column;
   width: 330px;
   border: 4px inset rgba(238, 231, 229, 0.712);
@@ -88,6 +90,7 @@ body {
   display: flex;
   flex-direction: column;
   border-top: 4px outset rgb(8, 6, 4);
+  background-image: url(pictures/brushed-alum.png);
 }
 
 .row {

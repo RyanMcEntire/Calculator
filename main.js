@@ -46,7 +46,7 @@ const operate = function (a, op, b) {
 
 let displayValue;
 const displayScreen = document.querySelector("#numberDisplay");
-displayScreen.textContent = "0";
+displayScreen.textContent = "13457869";
 
 const buttonPress = document.getElementById("buttonArea");
 buttonPress.addEventListener("click", (e) => {
