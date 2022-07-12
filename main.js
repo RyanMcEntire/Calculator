@@ -44,8 +44,6 @@ const operate = function (a, op, b) {
   console.log(total);
 };
 
-
-
 let displayValue;
 const displayScreen = document.querySelector("#numberDisplay");
 displayScreen.textContent = "0";

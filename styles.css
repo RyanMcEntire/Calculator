@@ -1,7 +1,8 @@
 @font-face {
   font-family: sevenSegment;
-  src: url('./Fonts/seven-segment.ttf')
+  src: url("./Fonts/seven-segment.ttf");
 }
+
 body {
   background-color: rgb(143, 117, 84);
 }
@@ -27,7 +28,7 @@ body {
   width: 325;
   display: flex;
   border: 0px solid black;
-  padding-top: 20px; 
+  padding-top: 20px;
   margin-left: 75%;
 }
 
@@ -37,7 +38,7 @@ body {
   background-color: rgb(72, 116, 72);
   color: rgb(255, 240, 155);
   text-align: right;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-weight: bold;
   padding: 5px;
   border-radius: 7px;
@@ -45,10 +46,13 @@ body {
 }
 
 .legend {
-  text-align: center;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: ;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-weight: bold;
-  font-size: ;
+  font-size: 20px;
+  padding: 0px;
+  margin: 0px;
+  margin-top: 26px;
 }
 .ui {
   display: flex;
@@ -57,7 +61,6 @@ body {
   width: 330px;
   border: 4px inset rgba(238, 231, 229, 0.712);
   border-radius: 22px;
-
 }
 
 .glass {
@@ -76,16 +79,9 @@ body {
   letter-spacing: 2px;
   font-family: sevenSegment;
   color: rgb(255, 190, 190);
-  /*filter: drop-shadow(0 0 10px 14px rgb(255, 37, 37));
-  */
-  text-shadow: 
-  0 0 5px rgb(255, 145, 182),
-  0 0 10px rgb(255, 104, 104),
-  0 0 15px rgb(255, 0, 0),
-  0 0 20px rgb(255, 0, 0),
-  0 0 20px rgb(255, 0, 0),
-  0 0 30px rgb(204, 0, 0),
-  0 0 50px rgb(204, 0, 0);
+  text-shadow: 0 0 5px rgb(255, 145, 182), 0 0 10px rgb(255, 104, 104),
+    0 0 15px rgb(255, 0, 0), 0 0 20px rgb(255, 0, 0), 0 0 20px rgb(255, 0, 0),
+    0 0 30px rgb(204, 0, 0), 0 0 50px rgb(204, 0, 0);
 }
 
 .buttonArea {
@@ -103,7 +99,11 @@ body {
 
 .press {
   flex-direction: column;
-  //border: 1px solid rgba(136, 136, 136, 0.5);
+  display: flex;
+  /*
+  border: 1px solid rgba(136, 136, 136, 0.5);
+  */
+  align-items: center;
 }
 
 button {

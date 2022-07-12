@@ -1,110 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calculator by Ryan</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
-  
-</head>
-<body>
-  <p class="sign">work in progress</p>
-  <div class="calcFrame">
-    <div class="brains">
-      <div class="model">Calcy 440</div>
-    </div>
-    <div class="ui">
-      <div class="glass">
-        <div id="numberDisplay" class="numbers">112479098</div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator by Ryan</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <p class="sign">work in progress</p>
+    <div class="calcFrame">
+      <div class="brains">
+        <div class="model">Calcy 440</div>
       </div>
-      <div id="buttonArea" class="buttonArea">
-        <div class="row first">
-          <div class="press">
-            <p class="legend">÷</p>
-            <button value="/" class="divide"></button>
-          </div>
+      <div class="ui">
+        <div class="glass">
+          <div id="numberDisplay" class="numbers">112479098</div>
         </div>
-        <div class="row second">
-          <div class="press">
-            <p class="legend">7</p>
-            <button value="7" class="seven"></button>
+        <div id="buttonArea" class="buttonArea">
+          <div class="row first">
+            <div class="press">
+              <p class="legend">÷</p>
+              <button value="/" class="divide"></button>
+            </div>
           </div>
-          <div class="press">
-            <p class="legend">8</p>
-            <button value="8" class="eight"></button>
+          <div class="row second">
+            <div class="press">
+              <p class="legend">7</p>
+              <button value="7" class="seven"></button>
+            </div>
+            <div class="press">
+              <p class="legend">8</p>
+              <button value="8" class="eight"></button>
+            </div>
+            <div class="press">
+              <p class="legend">9</p>
+              <button value="9" class="nine"></button>
+            </div>
+            <div class="press">
+              <p class="legend">×</p>
+              <button value="x" class="multiply"></button>
+            </div>
           </div>
-          <div class="press">
-            <p class="legend">9</p>
-            <button value="9" class="nine"></button>
+          <div class="row third">
+            <div class="press">
+              <p class="legend">4</p>
+              <button value="4" class="four"></button>
+            </div>
+            <div class="press">
+              <p class="legend">5</p>
+              <button value="5" class="five"></button>
+            </div>
+            <div class="press">
+              <p class="legend">6</p>
+              <button value="6" class="six"></button>
+            </div>
+            <div class="press">
+              <p class="legend">−</p>
+              <button value="-" class="subtract"></button>
+            </div>
           </div>
-          <div class="press">
-            <p class="legend">×</p>
-            <button value="x" class="multiply"></button>
+          <div class="row fourth">
+            <div class="press">
+              <p class="legend">1</p>
+              <button value="1" class="one"></button>
+            </div>
+            <div class="press">
+              <p class="legend">2</p>
+              <button value="2" class="two"></button>
+            </div>
+            <div class="press">
+              <p class="legend">3</p>
+              <button value="3" class="three"></button>
+            </div>
+            <div class="press">
+              <p class="legend">+</p>
+              <button value="+" class="add"></button>
+            </div>
           </div>
-        </div>
-        <div class="row third">
-          <div class="press">
-            <p class="legend">4</p>
-            <button value="4" class="four"></button>
-          </div>
-          <div class="press">
-            <p class="legend">5</p>
-            <button value="5" class="five"></button>
-          </div>
-          <div class="press">
-            <p class="legend">6</p>
-            <button value="6" class="six"></button>
-          </div>
-          <div class="press">
-            <p class="legend">−</p>
-            <button value="-" class="subtract"></button>
-          </div>
-        </div>
-        <div class="row fourth">
-          <div class="press">
-            <p class="legend">1</p>
-            <button value="1" class="one"></button>
-          </div>
-          <div class="press">
-            <p class="legend">2</p>
-            <button value="2" class="two"></button>
-          </div>
-          <div class="press">
-            <p class="legend">3</p>
-            <button value="3" class="three"></button>
-          </div>
-          <div class="press">
-            <p class="legend">+</p>
-            <button value="+" class="add"></button>
-          </div>
-        </div>
-        <div class="row fifth">
-          <div class="press">
-            <p class="legend">C</p>
-            <button value="C" class="clear"></button>
-          </div>
-          <div class="press">
-            <p class="legend">0</p>
-            <button value="0" class="zero"></button>
-          </div>
-          <div class="press">
-            <p class="legend">.</p>
-            <button value="." class="decimal"></button>
-          </div>
-          <div class="press">
-            <p class="legend">=</p>
-            <button value="=" class="equals"></button>
+          <div class="row fifth">
+            <div class="press">
+              <p class="legend">C</p>
+              <button value="C" class="clear"></button>
+            </div>
+            <div class="press">
+              <p class="legend">0</p>
+              <button value="0" class="zero"></button>
+            </div>
+            <div class="press">
+              <p class="legend">.</p>
+              <button value="." class="decimal"></button>
+            </div>
+            <div class="press">
+              <p class="legend">=</p>
+              <button value="=" class="equals"></button>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-
-  <script src="main.js"></script>
-</body>
+    <script src="main.js"></script>
+  </body>
 </html>
