@@ -55,6 +55,14 @@ displayScreen.textContent = "0";
 
 const buttonPress = document.getElementById("buttonArea");
 buttonPress.addEventListener("click", (e) => {
+  if (e.target.value === "c") {
+    op = undefined;
+    a = undefined;
+    b = undefined;
+    c = undefined;
+    displayScreen.textContent = 0;
+    computeArray.length = 0;
+  }
   if (
     e.target.id !== "operator" &&
     e.target.id !== "number" &&
@@ -70,14 +78,7 @@ buttonPress.addEventListener("click", (e) => {
   let computeJoined = computeArray.join("");
   displayScreen.textContent = computeJoined;
   
-    if (e.target.value === "c") {
-      op = undefined;
-      a = undefined;
-      b = undefined;
-      c = undefined;
-      displayScreen.textContent = 0;
-      computeArray.length = 0;
-    }
+    
   if (e.target.id === "operator") {
     if (a !== undefined) {
       le = computeArray.length - 1;

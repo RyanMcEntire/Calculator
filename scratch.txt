@@ -1,3 +1,10 @@
+List of fixes:
+
+    limit zero input to one digit
+    limit character input but still allow operation
+ 
+ 
+ 
  make storage array
  have default display be 0
  add each input sent to a display array (or string?)
