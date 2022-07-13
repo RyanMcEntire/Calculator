@@ -45,8 +45,8 @@ const operate = function (a, op, b) {
 };
 
 let computeArray = [];
-let a = 0;
-let b = 0;
+let a;
+let b;
 let op;
 
 let displayValue;
@@ -59,7 +59,26 @@ buttonPress.addEventListener("click", (e) => {
   computeArray.push(displayValue);
   let computeJoined = computeArray.join("");
   displayScreen.textContent = computeJoined;
+  if (e.target.value === "c") {
+    op = undefined;
+    a = undefined;
+    b = undefined;
+    c = undefined;
+    displayScreen.textContent = 0;
+    computeArray.length = 0;
+  }
   if (e.target.id === "operator") {
+    if (a !== undefined) {
+      le = computeArray.length - 1;
+      let bArray = computeArray.splice(0, le);
+      b = bArray.join("");
+      c = operate(+a, op, +b);
+      op = e.target.value;
+      a = c;
+      displayScreen.textContent = c;
+      computeArray.length = 0;
+      return;
+    }
     op = e.target.value;
     le = computeArray.length - 1;
     let aArray = computeArray.splice(0, le);
@@ -78,6 +97,7 @@ buttonPress.addEventListener("click", (e) => {
     console.log(c);
   }
   console.log(a, b);
+  console.log(op);
   console.log(displayScreen.textContent);
   console.log(computeArray);
 });

@@ -14,3 +14,10 @@
   perform operation on a, op, and b.
   store the result as a
   display result on screen
+
+  when computing multiple operations
+  if event is operator
+    if a is not undefined
+        splice the array to b
+        join
+        operate
