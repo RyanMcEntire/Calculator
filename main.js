@@ -63,6 +63,9 @@ buttonPress.addEventListener("click", (e) => {
     return;
   }
   let displayValue = e.target.value;
+  if (computeArray.length > 12) {
+    return;
+  }
   computeArray.push(displayValue);
   let computeJoined = computeArray.join("");
   displayScreen.textContent = computeJoined;
