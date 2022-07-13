@@ -31,7 +31,7 @@ const operate = function (a, op, b) {
       break;
   }
   switch (op) {
-    case "*":
+    case "x":
       total = multiply(a, b);
       break;
   }
@@ -41,7 +41,7 @@ const operate = function (a, op, b) {
       break;
   }
 
-  console.log(total);
+  return total;
 };
 
 let computeArray = [];
@@ -61,21 +61,23 @@ buttonPress.addEventListener("click", (e) => {
   displayScreen.textContent = computeJoined;
   if (e.target.id === "operator") {
     op = e.target.value;
-    let aArray = computeArray.splice(0, -1);
+    le = computeArray.length - 1;
+    let aArray = computeArray.splice(0, le);
     a = aArray.join("");
     computeArray.length = 0;
   }
   if (e.target.value === "=") {
-    let bArray = computeArray.splice(0, -1);
+    le = computeArray.length - 1;
+    let bArray = computeArray.splice(0, le);
     b = bArray.join("");
-    c = operate(a, op, b);
+    c = operate(+a, op, +b);
     a = c;
     displayScreen.textContent = c;
     computeArray.length = 0;
+
+    console.log(c);
   }
-  console.log(a)
-  console.log(b)
+  console.log(a, b,);
   console.log(displayScreen.textContent);
   console.log(computeArray);
-  console.log(op);
 });
