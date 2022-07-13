@@ -77,7 +77,7 @@ buttonPress.addEventListener("click", (e) => {
 
     console.log(c);
   }
-  console.log(a, b,);
+  console.log(a, b);
   console.log(displayScreen.textContent);
   console.log(computeArray);
 });
