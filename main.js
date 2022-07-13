@@ -62,6 +62,7 @@ buttonPress.addEventListener("click", (e) => {
     c = undefined;
     displayScreen.textContent = 0;
     computeArray.length = 0;
+    return;
   }
   if (
     e.target.id !== "operator" &&
