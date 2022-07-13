@@ -55,26 +55,39 @@ displayScreen.textContent = "0";
 
 const buttonPress = document.getElementById("buttonArea");
 buttonPress.addEventListener("click", (e) => {
+  if (
+    e.target.id !== "operator" &&
+    e.target.id !== "number" &&
+    e.target.id !== "equality"
+  ) {
+    return;
+  }
   let displayValue = e.target.value;
   computeArray.push(displayValue);
   let computeJoined = computeArray.join("");
   displayScreen.textContent = computeJoined;
-  if (e.target.value === "c") {
-    op = undefined;
-    a = undefined;
-    b = undefined;
-    c = undefined;
-    displayScreen.textContent = 0;
-    computeArray.length = 0;
-  }
+  
+    if (e.target.value === "c") {
+      op = undefined;
+      a = undefined;
+      b = undefined;
+      c = undefined;
+      displayScreen.textContent = 0;
+      computeArray.length = 0;
+    }
   if (e.target.id === "operator") {
     if (a !== undefined) {
       le = computeArray.length - 1;
+        if (computeArray.length === 0) {
+          op = e.target.value;
+          return;
+        }
       let bArray = computeArray.splice(0, le);
       b = bArray.join("");
       c = operate(+a, op, +b);
       op = e.target.value;
       a = c;
+      b = undefined;
       displayScreen.textContent = c;
       computeArray.length = 0;
       return;
@@ -87,10 +100,15 @@ buttonPress.addEventListener("click", (e) => {
   }
   if (e.target.value === "=") {
     le = computeArray.length - 1;
+    if (computeArray.length === 0) {
+      return;
+    }
     let bArray = computeArray.splice(0, le);
     b = bArray.join("");
     c = operate(+a, op, +b);
     a = c;
+    b = undefined;
+    op = undefined;
     displayScreen.textContent = c;
     computeArray.length = 0;
 
