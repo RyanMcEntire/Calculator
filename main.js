@@ -72,21 +72,23 @@ buttonPress.addEventListener("click", (e) => {
     return;
   }
   let displayValue = e.target.value;
-  if (computeArray.length > 12) {
-    return;
+  if (e.target.id === "number") {
+    if (computeArray.length > 11) {
+      return
+    }
   }
   computeArray.push(displayValue);
   let computeJoined = computeArray.join("");
   displayScreen.textContent = computeJoined;
   
-    
+
   if (e.target.id === "operator") {
     if (a !== undefined) {
       le = computeArray.length - 1;
-        if (computeArray.length === 0) {
-          op = e.target.value;
-          return;
-        }
+      if (computeArray.length === 0) {
+        op = e.target.value;
+        return;
+      }
       let bArray = computeArray.splice(0, le);
       b = bArray.join("");
       c = operate(+a, op, +b);
@@ -111,6 +113,15 @@ buttonPress.addEventListener("click", (e) => {
     let bArray = computeArray.splice(0, le);
     b = bArray.join("");
     c = operate(+a, op, +b);
+    if (c.length > 12) {
+      displayScreen.textContent = "huge number";
+      a = 0;
+      computeArray.length = 0;
+      b = undefined;
+      op = undefined;
+
+      return;
+    }
     a = c;
     b = undefined;
     op = undefined;
