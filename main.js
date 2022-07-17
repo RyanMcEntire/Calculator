@@ -50,13 +50,21 @@ let b;
 let c;
 let op;
 let equals;
-
 let displayValue;
 const displayScreen = document.querySelector("#numberDisplay");
 displayScreen.textContent = "0";
-
+const decimalButton = document.getElementById("decimal")
 const buttonPress = document.getElementById("buttonArea");
+
+if (computeArray.includes(".")) {
+
+}
 buttonPress.addEventListener("click", (e) => {
+  if (computeArray.includes(".")) {
+    if (e.target.value === ".") {
+    return;
+    }
+  }
   if (e.target.value === "c") {
     op = undefined;
     a = undefined;
@@ -111,7 +119,7 @@ buttonPress.addEventListener("click", (e) => {
       computeArray.length = 0;
       return;
     }
-    
+
     op = e.target.value;
     le = computeArray.length - 1;
     let aArray = computeArray.splice(0, le);
@@ -136,6 +144,7 @@ buttonPress.addEventListener("click", (e) => {
 
       return;
     }
+
     a = c;
     b = undefined;
     op = undefined;
@@ -144,9 +153,10 @@ buttonPress.addEventListener("click", (e) => {
     equals = true;
     return;
   }
+
   console.log(a, b, c);
   console.log(op);
   console.log(displayScreen.textContent);
   console.log(computeArray);
-  console.log(equals);
+  console.log(computeArray.includes("."));
 });
