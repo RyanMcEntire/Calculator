@@ -53,16 +53,13 @@ let equals;
 let displayValue;
 const displayScreen = document.querySelector("#numberDisplay");
 displayScreen.textContent = "0";
-const decimalButton = document.getElementById("decimal")
+const decimalButton = document.getElementById("decimal");
 const buttonPress = document.getElementById("buttonArea");
 
-if (computeArray.includes(".")) {
-
-}
 buttonPress.addEventListener("click", (e) => {
   if (computeArray.includes(".")) {
     if (e.target.value === ".") {
-    return;
+      return;
     }
   }
   if (e.target.value === "c") {
@@ -84,6 +81,11 @@ buttonPress.addEventListener("click", (e) => {
   }
   let displayValue = e.target.value;
   if (e.target.id === "number") {
+    if (e.target.value === ".") {
+      if (computeArray.length === 0) {
+        computeArray.push(0);
+      }
+    }
     equals = false;
     if (computeArray.length > 11) {
       return;
