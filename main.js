@@ -140,12 +140,15 @@ buttonPress.addEventListener("click", (e) => {
     let bArray = computeArray.splice(0, le);
     b = bArray.join("");
     c = operate(+a, op, +b);
-    a = c.toFixed(4);
+    a = +c.toFixed(4);
     b = undefined;
     op = undefined;
     aString = a.toString();
-    if (aString.length > 12) {
-      aString = aString.slice(0, 12)
+    if (aString.length >= 13) {
+      displayScreen.textContent = "TOO BIG";
+      a = undefined;
+      computeArray.length = 0;
+      return;
     }
     displayScreen.textContent = aString;
     computeArray.length = 0;
