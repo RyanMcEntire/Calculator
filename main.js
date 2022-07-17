@@ -53,7 +53,6 @@ let equals;
 let displayValue;
 const displayScreen = document.querySelector("#numberDisplay");
 displayScreen.textContent = "0";
-const decimalButton = document.getElementById("decimal");
 const buttonPress = document.getElementById("buttonArea");
 
 buttonPress.addEventListener("click", (e) => {
@@ -84,6 +83,11 @@ buttonPress.addEventListener("click", (e) => {
     if (e.target.value === ".") {
       if (computeArray.length === 0) {
         computeArray.push(0);
+      }
+    }
+    if (computeArray.length === 0) {
+      if (e.target.value === "0") {
+        return;
       }
     }
     equals = false;
@@ -136,21 +140,14 @@ buttonPress.addEventListener("click", (e) => {
     let bArray = computeArray.splice(0, le);
     b = bArray.join("");
     c = operate(+a, op, +b);
-    op = undefined;
-    if (c.length > 12) {
-      displayScreen.textContent = "huge number";
-      a = 0;
-      computeArray.length = 0;
-      b = undefined;
-      op = undefined;
-
-      return;
-    }
-
-    a = c;
+    a = c.toFixed(4);
     b = undefined;
     op = undefined;
-    displayScreen.textContent = a;
+    aString = a.toString();
+    if (aString.length > 12) {
+      aString = aString.slice(0, 12)
+    }
+    displayScreen.textContent = aString;
     computeArray.length = 0;
     equals = true;
     return;
