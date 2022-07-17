@@ -47,7 +47,9 @@ const operate = function (a, op, b) {
 let computeArray = [];
 let a;
 let b;
+let c;
 let op;
+let equals;
 
 let displayValue;
 const displayScreen = document.querySelector("#numberDisplay");
@@ -62,6 +64,7 @@ buttonPress.addEventListener("click", (e) => {
     c = undefined;
     displayScreen.textContent = 0;
     computeArray.length = 0;
+    equals = false;
     return;
   }
   if (
@@ -73,14 +76,15 @@ buttonPress.addEventListener("click", (e) => {
   }
   let displayValue = e.target.value;
   if (e.target.id === "number") {
+    equals = false;
     if (computeArray.length > 11) {
-      return
+      return;
     }
   }
+
   computeArray.push(displayValue);
   let computeJoined = computeArray.join("");
   displayScreen.textContent = computeJoined;
-  
 
   if (e.target.id === "operator") {
     if (a !== undefined) {
@@ -89,16 +93,25 @@ buttonPress.addEventListener("click", (e) => {
         op = e.target.value;
         return;
       }
+      if (equals === true) {
+        op = e.target.value;
+        a = c;
+        computeArray.length = 0;
+        displayScreen.textContent = a;
+        return;
+      }
       let bArray = computeArray.splice(0, le);
       b = bArray.join("");
       c = operate(+a, op, +b);
       op = e.target.value;
       a = c;
       b = undefined;
+      equals = false;
       displayScreen.textContent = c;
       computeArray.length = 0;
       return;
     }
+    
     op = e.target.value;
     le = computeArray.length - 1;
     let aArray = computeArray.splice(0, le);
@@ -113,6 +126,7 @@ buttonPress.addEventListener("click", (e) => {
     let bArray = computeArray.splice(0, le);
     b = bArray.join("");
     c = operate(+a, op, +b);
+    op = undefined;
     if (c.length > 12) {
       displayScreen.textContent = "huge number";
       a = 0;
@@ -125,13 +139,14 @@ buttonPress.addEventListener("click", (e) => {
     a = c;
     b = undefined;
     op = undefined;
-    displayScreen.textContent = c;
+    displayScreen.textContent = a;
     computeArray.length = 0;
-
-    console.log(c);
+    equals = true;
+    return;
   }
-  console.log(a, b);
+  console.log(a, b, c);
   console.log(op);
   console.log(displayScreen.textContent);
   console.log(computeArray);
+  console.log(equals);
 });
